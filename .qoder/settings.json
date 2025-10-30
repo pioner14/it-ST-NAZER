@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "ask": [
+      "Read(!/home/nick/Projects/Prof-site/**)",
+      "Edit(!/home/nick/Projects/Prof-site/**)"
+    ],
+    "allow": [
+      "Read(/home/nick/Projects/Prof-site/**)",
+      "Edit(/home/nick/Projects/Prof-site/**)"
+    ]
+  },
+  "memoryImport": {},
+  "monitoring": {}
+}

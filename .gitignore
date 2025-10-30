@@ -1,0 +1,79 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+/build
+
+# Production
+/dist/
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env*.local
+
+# Typechain
+/typechain
+/typechain-types
+
+# TypeScript
+/*.tsbuildinfo
+
+# VS Code
+/.vscode
+
+# Mac files
+.DS_Store
+
+# IDE
+.idea/
+
+# Logs
+logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.build.local
+
+# Build outputs
+.build
+dist/
+
+# NPM
+package-lock.json
+yarn.lock
+
+# GitHub Pages
+/.github-pages/
+
+# Logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports
+*.tgz

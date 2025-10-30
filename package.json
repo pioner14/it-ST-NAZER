@@ -1,0 +1,37 @@
+{
+  "name": "multilingual-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next export",
+    "deploy": "next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy to GitHub Pages\" && git subtree push --prefix out origin gh-pages"
+  },
+  "dependencies": {
+    "@formatjs/intl-localematcher": "^0.6.2",
+    "accept-language": "^3.0.18",
+    "negotiator": "^1.0.0",
+    "next": "latest",
+    "next-intl": "^4.4.0",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest"
+  },
+  "description": "A professional portfolio website with support for English, French, and Russian languages.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}

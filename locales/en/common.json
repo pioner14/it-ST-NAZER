@@ -1,0 +1,35 @@
+{
+  "home": {
+    "title": "Welcome to My Portfolio",
+    "description": "This is a multilingual portfolio website",
+    "languageSwitcher": "Language"
+  },
+  "navigation": {
+    "about": "About",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Learn more about my skills and experience"
+  },
+  "services": {
+    "title": "Services",
+    "description": "Discover the services I offer"
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Read my latest articles and thoughts"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Get in touch with me",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message"
+    }
+  }
+}
