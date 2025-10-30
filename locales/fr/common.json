@@ -7,6 +7,7 @@
   "navigation": {
     "about": "À propos",
     "services": "Services",
+    "portfolio": "Portfolio",
     "blog": "Blog",
     "contact": "Contact"
   },
@@ -16,7 +17,7 @@
   },
   "services": {
     "title": "Services",
-    "description": "Découvrez les services que j'offre"
+    "description": "Réparation de PC, laptops, récupération de données, maintenance informatique et plus"
   },
   "blog": {
     "title": "Blog",
@@ -30,6 +31,9 @@
       "email": "Email",
       "message": "Message",
       "send": "Envoyer le message"
+    }
+  }
+}e"
     }
   }
 }

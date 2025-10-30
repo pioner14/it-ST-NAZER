@@ -2,6 +2,8 @@ import { ReactNode } from 'react'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { LanguageProvider } from '../../contexts/LanguageContext'
+import Navigation from '../../components/Navigation'
+import LanguageSwitcher from '../../components/LanguageSwitcher'
 
 export default async function LocaleLayout({
   children,
@@ -18,7 +20,10 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <LanguageProvider>
-            {children}
+            <Navigation />
+            <div className="min-h-screen">
+              {children}
+            </div>
           </LanguageProvider>
         </NextIntlClientProvider>
       </body>
