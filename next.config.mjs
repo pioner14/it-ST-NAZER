@@ -7,6 +7,12 @@ const nextConfig = {
   // Enable react strict mode
   reactStrictMode: true,
   
+  // Configure internationalization
+  i18n: {
+    locales: ['en', 'fr', 'ru'],
+    defaultLocale: 'fr',
+  },
+  
   // Configure images
   images: {
     remotePatterns: [

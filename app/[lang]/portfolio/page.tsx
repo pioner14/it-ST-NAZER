@@ -1,62 +1,13 @@
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { useLocale } from 'next-intl'
+import { getPortfolioProjects, PortfolioProject } from '../../../../lib/projects'
 
-export default function PortfolioPage() {
+// This component will be rendered server-side to fetch data
+export default async function PortfolioPage() {
   const t = useTranslations('services') // Using services translations for now
   const locale = useLocale()
-
-  // Sample portfolio data - in a real app this might come from a CMS or database
-  const projects = [
-    {
-      id: 1,
-      title: "E-commerce Website",
-      description: "A full-featured online store with payment integration and inventory management.",
-      technologies: ["React", "Node.js", "MongoDB"],
-      imageUrl: "/placeholder-ecommerce.jpg",
-      link: "#"
-    },
-    {
-      id: 2,
-      title: "Mobile Banking App",
-      description: "A secure mobile application for managing bank accounts and transactions.",
-      technologies: ["React Native", "TypeScript", "Firebase"],
-      imageUrl: "/placeholder-banking.jpg",
-      link: "#"
-    },
-    {
-      id: 3,
-      title: "Healthcare Dashboard",
-      description: "A data visualization dashboard for healthcare analytics and patient management.",
-      technologies: ["Next.js", "D3.js", "PostgreSQL"],
-      imageUrl: "/placeholder-healthcare.jpg",
-      link: "#"
-    },
-    {
-      id: 4,
-      title: "Task Management System",
-      description: "A collaborative task management platform with real-time updates.",
-      technologies: ["Vue.js", "Express", "Socket.io"],
-      imageUrl: "/placeholder-task.jpg",
-      link: "#"
-    },
-    {
-      id: 5,
-      title: "Educational Platform",
-      description: "An online learning platform with video courses and progress tracking.",
-      technologies: ["Angular", "Spring Boot", "MySQL"],
-      imageUrl: "/placeholder-education.jpg",
-      link: "#"
-    },
-    {
-      id: 6,
-      title: "Travel Booking System",
-      description: "A comprehensive travel booking platform with real-time availability.",
-      technologies: ["Next.js", "GraphQL", "AWS"],
-      imageUrl: "/placeholder-travel.jpg",
-      link: "#"
-    }
-  ]
+  const projects: PortfolioProject[] = await getPortfolioProjects()
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">

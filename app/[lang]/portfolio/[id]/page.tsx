@@ -1,8 +1,9 @@
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { useLocale } from 'next-intl'
+import { getPortfolioProjectById } from '../../../../../../lib/projects'
 
-export default function PortfolioItemPage({ 
+export default async function PortfolioItemPage({ 
   params 
 }: { 
   params: { id: string } 
@@ -10,17 +11,31 @@ export default function PortfolioItemPage({
   const t = useTranslations('services') // Using services translations for now
   const locale = useLocale()
   
-  // Sample portfolio data - in a real app this might come from a CMS or database
-  const project = {
-    id: params.id,
-    title: "Sample Project",
-    description: "This is a sample project description. In a real application, this would be loaded from a database or CMS.",
-    technologies: ["Technology 1", "Technology 2", "Technology 3"],
-    imageUrl: "/placeholder-project.jpg",
-    details: "This project involved implementing complex features and solving challenging problems. We used modern development practices to deliver a high-quality, scalable solution that met our client's requirements.",
-    challenges: "The main challenge was optimizing performance for large datasets while maintaining a responsive user interface.",
-    solution: "We implemented a caching layer and optimized our database queries to achieve the desired performance.",
-    results: "The project was delivered on time and received positive feedback from the client. Performance metrics showed a 40% improvement in page load times."
+  const project = await getPortfolioProjectById(params.id)
+
+  if (!project) {
+    return (
+      <div className="min-h-screen bg-white dark:bg-gray-900">
+        <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="text-center">
+            <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+              Project Not Found
+            </h1>
+            <p className="mt-4 text-lg text-gray-500 dark:text-gray-300">
+              The project you are looking for does not exist.
+            </p>
+            <div className="mt-6">
+              <Link 
+                href={`/${locale}/portfolio`} 
+                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Back to Portfolio
+              </Link>
+            </div>
+          </div>
+        </main>
+      </div>
+    )
   }
 
   return (
